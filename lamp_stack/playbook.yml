@@ -1,0 +1,11 @@
+---
+- name: Install and configure LAMP stack
+  hosts: webservers
+  become: true
+  gather_facts: true
+
+  roles:
+    - geerlingguy.mysql
+    - geerlingguy.php
+    - geerlingguy.apache
+    - linux-system-roles.timesync
